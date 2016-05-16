@@ -58,10 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <input type="button"
              name="registrationButton"
              value="Registrace"
+             onclick="location.href='data/signUp.php'"
              id="regBtn"
              />
     </div>
-    <?php
-    ?>
   </body>
 </html>
