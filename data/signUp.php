@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailSelect->execute(array($email));
     $existingUser = $emailSelect->fetchColumn();
     if ($existingUser != null) {
-        echo "<div style='text-align: center; margin-top:170px;'>
+        echo "<div style='text-align: center; margin-top:220px;'>
                         <label id='warningLb'>
                             Email already in use.
                         </label>

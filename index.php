@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $existingUser = @$stmt->fetchAll()[0];
             if(password_verify($pwd, $existingUser["PASSWORD"])) {
                 $_SESSION["user_id"] = $existingUser["USER_NUMBER"];
-                header("Location: index.php");
+                header("Location: data/mainItemListing.php");
             } else {
-                echo "<div style='text-align: center; margin-top:170px;'>
+                echo "<div style='text-align: center; margin-top:220px;'>
                         <label id='warningLb'>
                             Username or Password incorrect.
                         </label>
