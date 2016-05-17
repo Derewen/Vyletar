@@ -2,7 +2,7 @@
 .DS_Store
 Thumbs.db
 npm-debug.log
-db.php
+data/db.php
 /bower_components
 /node_modules
 /vendor
