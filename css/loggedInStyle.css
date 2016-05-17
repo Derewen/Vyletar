@@ -20,6 +20,10 @@ body {
     z-index: -1;
 }
 
+#box{  background: #eee; padding-top: 1px; padding-bottom: 1px; margin: 10px 10px 10px 10px; }
+#boxContent{ width: 75%; text-align: center;  border: 3px solid #C6FDFF; padding-top: 5px; padding-bottom: 5px; margin: 180px auto;}
+
+
 #nav{ background-color: #222; position: fixed; width: 100%; top: 0; left: 0; }
 #nav-wrapper{ width: 1280px; margin: 0 auto; text-align: center; }
 #nav ul { list-style-type: none; padding: 0; margin: 0; }
@@ -28,29 +32,36 @@ body {
 #nav ul li a,visited{ color: #00DBFF; display: block; padding: 15px; text-decoration: none; }
 
 #wrapper{ width: 75%; margin: 0 auto; text-align: center; }
-#content{ background-color: white; border: 3px solid #C6FDFF; padding: 50px; margin: 180px 0 0 0;}
+#content{ padding-top: 20px; padding-bottom: 0px; margin: 180px 0 0 0;}
 
-input[type="password"] {
+input[type="password"], input[type="text"], input[type="date"], textarea {
     background: rgba(0,0,122,0.3);
 }
 
 input[type="submit"] {
-    background: #45CAC4;
+    background: #22ECAF;
 }
 
-input {
+
+
+input, textarea {
+    text-align: justify;
 	width: 300px;
     text-align: center;
 	margin-bottom: 10px;
 	border: none;
 	outline: none;
-	padding: 10px;
+	padding: 15px;
 	font-size: 13px;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	border: 1px solid #C6FDFF;
 	border-radius: 4px;
     color: white;
 	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+}
+
+.req {
+    border: 1px solid red;
 }
 
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
