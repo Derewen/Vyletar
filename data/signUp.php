@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_number = (int) $stmt->fetchColumn();
         $_SESSION["user_id"] = $user_number;
         //redirect
-        header("Location: ../index.php");
+        header("Location: ../index.php?registered=true");
     }
 }
 ?>

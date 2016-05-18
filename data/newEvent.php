@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sel = $db->prepare("INSERT INTO PLACE(NAME, ADDRESS, CITY) VALUES (?, ?, ?)");
         $sel->execute(array($placeName, $address, $city));
         //nove nacteni prave vlozeneho mista vcetne id
-//        $place = selectPlace($placeName, $address, $city);
+        $place = selectPlace($placeName, $address, $city);
     }
 
     $event = checkForEvent($userNumber, $eventName, $time, $description);

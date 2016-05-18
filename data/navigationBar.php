@@ -2,7 +2,7 @@
   <div id="nav-wrapper">
     <ul>
       <li><a href="mainItemListing.php">Všechny akce</a></li>
-      <li><a href="userEvents.php">Moje akce</a></li>
+      <li><a href="currentUserEvents.php">Moje akce</a></li>
       <li><a href="newEvent.php">Nová akce</a></li>
       <li><a href="settings.php">Nastavení</a></li>
       <li class="unstyled"><a><?= $currentUser["NAME"]?> <?= $currentUser["SURNAME"]?></a></li>

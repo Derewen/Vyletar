@@ -2,6 +2,22 @@
 session_start();
 require "data/db.php";
 
+if (isset($_GET["registered"])) {
+    echo "<div style='text-align: center; margin-top:210px; color: #FFF;'>
+                        <label>
+                            Uživatel vytvořen.
+                        </label>
+                      </<div>";
+}
+
+if (isset($_GET["wrongPwd"])) {
+    echo "<div style='text-align: center; margin-top:210px;'>
+                        <label id='warningLb'>
+                            Username or Password incorrect.
+                        </label>
+                      </<div>";
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $pwd = $_POST["password"];
@@ -13,11 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["user_id"] = $existingUser["USER_NUMBER"];
                 header("Location: data/mainItemListing.php");
             } else {
-                echo "<div style='text-align: center; margin-top:220px;'>
-                        <label id='warningLb'>
-                            Username or Password incorrect.
-                        </label>
-                      </<div>";
+                header("Location: index.php?wrongPwd=true");
             }
 }
 ?>
