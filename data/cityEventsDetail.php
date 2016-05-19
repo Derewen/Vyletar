@@ -31,7 +31,8 @@ $events = $sel->fetchAll();
     <div id="boxContent">
         <?php foreach ($events as $event) { ?>
           <div id="eventBox">
-            <a class="event" href="eventDetail.php?creator=<?php echo $event[9] . "&currentEvent=" . $event[3]; ?>">
+            <a class="event" href="eventDetail.php?creator=<?php echo $event["NAME"] . "&currentEvent=" . $event[3]
+                        . "&currentEventNumber=" . $event["EVENT_NUMBER"]; ?>">
               <div style="position:relative;">
                 <span style="position:absolute; top:0px; left:25px;"><?php echo $event[3]; ?></span>
                 <span><?php echo $event[6]; ?></span>

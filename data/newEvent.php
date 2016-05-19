@@ -47,11 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //check jestli akce s danymi parametry existuje, propojeni tabulek
-    function checkForEvent($userNumber, $eventName, $time, $description) {
+    function checkForEvent($userNumber, $eventName, $time, $description, $placeNumber) {
         include "db.php";
         $sel = $db->prepare("SELECT * FROM EVENTS JOIN ATTEND using(EVENT_NUMBER) WHERE EVENTS.USER_NUMBER = ? "
-                . "and NAME = ? and TIME = ? and DESCRIPTION = ?");
-        $sel->execute(array($userNumber, $eventName, $time, $description));
+                . "and NAME = ? and TIME = ? and DESCRIPTION = ? and PLACE_NUMBER = ?");
+        $sel->execute(array($userNumber, $eventName, $time, $description, $placeNumber));
         return @$sel->fetchAll()[0];
     }
 
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $place = selectPlace($placeName, $address, $city);
     }
 
-    $event = checkForEvent($userNumber, $eventName, $time, $description);
+    $event = checkForEvent($userNumber, $eventName, $time, $description, $place["PLACE_NUMBER"]);
     //zalozeni nove akce, pokud takovou akci jeste nemame vytvorenou (akci se stejnymi parametry muze mit jen jiny vlastnik)
     if ($event == null) {
         $sel = $db->prepare("INSERT INTO EVENTS(USER_NUMBER, PLACE_NUMBER, NAME, TIME, DESCRIPTION) VALUES (?, ?, ?, ?, ?)");
